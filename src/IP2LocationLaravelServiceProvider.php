@@ -13,7 +13,7 @@ class IP2LocationLaravelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->bind('ip2locationlaravel', IP2LocationLaravel::class);
     }
 
     /**
@@ -31,8 +31,8 @@ class IP2LocationLaravelServiceProvider extends ServiceProvider
 
         $this->mergeConfigFrom( $config, 'ip2locationlaravel');
 
-        $this->app['ip2locationlaravel'] = $this->app->share(function($app){
-            return new IP2LocationLaravel;
-        });
+        // $this->app['ip2locationlaravel'] = $this->app->share(function($app){
+            // return new IP2LocationLaravel;
+        // });
     }
 }
