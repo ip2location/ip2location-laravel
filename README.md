@@ -5,7 +5,8 @@ IP2Location Laravel extension enables the user to find the country, region, city
 
 ## INSTALLATION
 
-1. Add the below line into your ```composer.json``` file.
+1. Add the below line into your `composer.json` file.
+
 ```
 {
   "require": {
@@ -13,18 +14,19 @@ IP2Location Laravel extension enables the user to find the country, region, city
   }
 }
 ```
-2. Run the command: ```composer update```.
-3. Edit ```config/app.php``` and add the following line to providers.
-```Ip2location\IP2LocationLaravel\IP2LocationLaravelServiceProvider::class,```
-4. Add the alias to ```config/app.php```:
-```'IP2LocationLaravel' => Ip2location\IP2LocationLaravel\Facade\IP2LocationLaravel::class,```
+
+2. Run the command: `composer update`.
+3. Edit `config/app.php` and add the following line to providers.
+`Ip2location\IP2LocationLaravel\IP2LocationLaravelServiceProvider::class,`
+4. Add the alias to `config/app.php`:
+`'IP2LocationLaravel' => Ip2location\IP2LocationLaravel\Facade\IP2LocationLaravel::class,`
 5. Then publish the config file by:
-```php artisan vendor:publish```
+`php artisan vendor:publish`
 6. Download IP2Location BIN database
     - IP2Location free LITE database at http://lite.ip2location.com
     - IP2Location commercial database at http://www.ip2location.com
-7. Create a folder named as ```ip2location``` in the ```database``` directory.
-8. Unzip and copy the BIN file into ```database/ip2location/``` folder. 
+7. Create a folder named as `ip2location` in the `database` directory.
+8. Unzip and copy the BIN file into `database/ip2location/` folder. 
 9. Rename the BIN file to IP2LOCATION.BIN.
 
 
@@ -61,4 +63,5 @@ echo 'ISP Name              : ' . $records['isp'] . "<br>";
 ## SUPPORT
 
 Email: support@ip2location.com
+
 Website: http://www.ip2location.com
