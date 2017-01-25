@@ -1,0 +1,27 @@
+{
+    "name": "ip2location/ip2location-laravel",
+    "description": "Determine geolocation information of web visitor's based on their IP address.",
+    "license": "LGPL",
+    "keywords": [
+        "laravel",
+        "laravel 5",
+        "IP2Location",
+        "geolocation"
+    ],
+    "authors": [
+        {
+            "name": "IP2Location",
+            "email": "support@ip2location.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4",
+        "ip2location/ip2location-php": "8.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ip2location\\IP2LocationLaravel\\": "src/"
+        }
+    }
+}
