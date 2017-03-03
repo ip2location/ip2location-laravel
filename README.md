@@ -60,6 +60,13 @@ echo 'Domain Name           : ' . $records['domainName'] . "<br>";
 echo 'ISP Name              : ' . $records['isp'] . "<br>";
 ```
 
+## DEPENDENCIES (IP2LOCATION BIN DATA FILE)
+
+This library requires IP2Location BIN data file to function. You may download the BIN data file at
+* IP2Location LITE BIN Data (Free): http://lite.ip2location.com
+* IP2Location Commercial BIN Data (Comprehensive): http://www.ip2location.com
+
+
 ## SUPPORT
 
 Email: support@ip2location.com
