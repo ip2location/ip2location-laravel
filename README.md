@@ -8,9 +8,9 @@ IP2Location Laravel extension enables the user to find the country, region, city
 ## INSTALLATION
 
 1. Run the command: `composer require ip2location/ip2location-laravel` to download the package into the Laravel platform.
-2. Edit `config/app.php` and add the below line in 'providers' section:
+2. Edit `config/app.php` and add the below line in 'providers' section:  
 `Ip2location\IP2LocationLaravel\IP2LocationLaravelServiceProvider::class,`
-3. Then publish the config file by:
+3. Then publish the config file by:  
 `php artisan vendor:publish --provider=Ip2location\IP2LocationLaravel\IP2LocationLaravelServiceProvider --force`
 4. Download IP2Location BIN database
     - IP2Location free LITE database at http://lite.ip2location.com
@@ -28,7 +28,6 @@ In this tutorial, we will show you on how to create a **TestController** to disp
 ```
 php artisan make:controller TestController
 ```
-
 2. Open the **app/Http/Controllers/TestController.php** in any text editor.
 3. Add the below lines into the controller file.
 ```
@@ -42,7 +41,7 @@ use IP2LocationLaravel;			//use IP2LocationLaravel class
 class TestController extends Controller
 {
 	//Create a lookup function for display
-    public function lookup(){
+        public function lookup(){
 		//Try query the geolocation information of 8.8.8.8 IP address
 		$records = IP2LocationLaravel::get('8.8.8.8');
 
@@ -76,7 +75,6 @@ class TestController extends Controller
 ```
 Route::get('test', 'TestController@lookup');
 ```
-
 5. Enter the URL <your domain>/public/test and run. You should see the information of **8.8.8.8** IP address.
 
 ## DEPENDENCIES (IP2LOCATION BIN DATA FILE)
