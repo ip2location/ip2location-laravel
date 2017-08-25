@@ -7,60 +7,77 @@ IP2Location Laravel extension enables the user to find the country, region, city
 
 ## INSTALLATION
 
-1. Add the below line into your `composer.json` file.
-
-```
-{
-  "require": {
-    "ip2location/ip2location-laravel": "1.*"
-  }
-}
-```
-
-2. Run the command: `composer update`.
-3. Edit `config/app.php` and add the following line to providers.
+1. Run the command: `composer require ip2location/ip2location-laravel` to download the package into the Laravel platform.
+2. Edit `config/app.php` and add the below line in 'providers' section:
 `Ip2location\IP2LocationLaravel\IP2LocationLaravelServiceProvider::class,`
-4. Add the alias to `config/app.php`:
-`'IP2LocationLaravel' => Ip2location\IP2LocationLaravel\Facade\IP2LocationLaravel::class,`
-5. Then publish the config file by:
-`php artisan vendor:publish`
-6. Download IP2Location BIN database
+3. Then publish the config file by:
+`php artisan vendor:publish --provider=Ip2location\IP2LocationLaravel\IP2LocationLaravelServiceProvider --force`
+4. Download IP2Location BIN database
     - IP2Location free LITE database at http://lite.ip2location.com
     - IP2Location commercial database at http://www.ip2location.com
-7. Create a folder named as `ip2location` in the `database` directory.
-8. Unzip and copy the BIN file into `database/ip2location/` folder. 
-9. Rename the BIN file to IP2LOCATION.BIN.
+5. Create a folder named as `ip2location` in the `database` directory.
+6. Unzip and copy the BIN file into `database/ip2location/` folder. 
+7. Rename the BIN file to IP2LOCATION.BIN.
 
 
 ## USAGE
 
-```
-$records = IP2LocationLaravel::get('8.8.8.8');
+In this tutorial, we will show you on how to create a **TestController** to display the IP information.
 
-echo 'IP Number             : ' . $records['ipNumber'] . "<br>";
-echo 'IP Version            : ' . $records['ipVersion'] . "<br>";
-echo 'IP Address            : ' . $records['ipAddress'] . "<br>";
-echo 'Country Code          : ' . $records['countryCode'] . "<br>";
-echo 'Country Name          : ' . $records['countryName'] . "<br>";
-echo 'Region Name           : ' . $records['regionName'] . "<br>";
-echo 'City Name             : ' . $records['cityName'] . "<br>";
-echo 'Latitude              : ' . $records['latitude'] . "<br>";
-echo 'Longitude             : ' . $records['longitude'] . "<br>";
-echo 'Area Code             : ' . $records['areaCode'] . "<br>";
-echo 'IDD Code              : ' . $records['iddCode'] . "<br>";
-echo 'Weather Station Code  : ' . $records['weatherStationCode'] . "<br>";
-echo 'Weather Station Name  : ' . $records['weatherStationName'] . "<br>";
-echo 'MCC                   : ' . $records['mcc'] . "<br>";
-echo 'MNC                   : ' . $records['mnc'] . "<br>";
-echo 'Mobile Carrier        : ' . $records['mobileCarrierName'] . "<br>";
-echo 'Usage Type            : ' . $records['usageType'] . "<br>";
-echo 'Elevation             : ' . $records['elevation'] . "<br>";
-echo 'Net Speed             : ' . $records['netSpeed'] . "<br>";
-echo 'Time Zone             : ' . $records['timeZone'] . "<br>";
-echo 'ZIP Code              : ' . $records['zipCode'] . "<br>";
-echo 'Domain Name           : ' . $records['domainName'] . "<br>";
-echo 'ISP Name              : ' . $records['isp'] . "<br>";
+1. Create a **TestController** in Laravel using the below command line
 ```
+php artisan make:controller TestController
+```
+
+2. Open the **app/Http/Controllers/TestController.php** in any text editor.
+3. Add the below lines into the controller file.
+```
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use IP2LocationLaravel;			//use IP2LocationLaravel class
+
+class TestController extends Controller
+{
+	//Create a lookup function for display
+    public function lookup(){
+		//Try query the geolocation information of 8.8.8.8 IP address
+		$records = IP2LocationLaravel::get('8.8.8.8');
+
+		echo 'IP Number             : ' . $records['ipNumber'] . "<br>";
+		echo 'IP Version            : ' . $records['ipVersion'] . "<br>";
+		echo 'IP Address            : ' . $records['ipAddress'] . "<br>";
+		echo 'Country Code          : ' . $records['countryCode'] . "<br>";
+		echo 'Country Name          : ' . $records['countryName'] . "<br>";
+		echo 'Region Name           : ' . $records['regionName'] . "<br>";
+		echo 'City Name             : ' . $records['cityName'] . "<br>";
+		echo 'Latitude              : ' . $records['latitude'] . "<br>";
+		echo 'Longitude             : ' . $records['longitude'] . "<br>";
+		echo 'Area Code             : ' . $records['areaCode'] . "<br>";
+		echo 'IDD Code              : ' . $records['iddCode'] . "<br>";
+		echo 'Weather Station Code  : ' . $records['weatherStationCode'] . "<br>";
+		echo 'Weather Station Name  : ' . $records['weatherStationName'] . "<br>";
+		echo 'MCC                   : ' . $records['mcc'] . "<br>";
+		echo 'MNC                   : ' . $records['mnc'] . "<br>";
+		echo 'Mobile Carrier        : ' . $records['mobileCarrierName'] . "<br>";
+		echo 'Usage Type            : ' . $records['usageType'] . "<br>";
+		echo 'Elevation             : ' . $records['elevation'] . "<br>";
+		echo 'Net Speed             : ' . $records['netSpeed'] . "<br>";
+		echo 'Time Zone             : ' . $records['timeZone'] . "<br>";
+		echo 'ZIP Code              : ' . $records['zipCode'] . "<br>";
+		echo 'Domain Name           : ' . $records['domainName'] . "<br>";
+		echo 'ISP Name              : ' . $records['isp'] . "<br>";
+	}
+}
+```
+4. Add the following line into the *routes/web.php* file.
+```
+Route::get('test', 'TestController@lookup');
+```
+
+5. Enter the URL <your domain>/public/test and run. You should see the information of **8.8.8.8** IP address.
 
 ## DEPENDENCIES (IP2LOCATION BIN DATA FILE)
 

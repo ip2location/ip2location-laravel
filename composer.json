@@ -1,7 +1,7 @@
 {
     "name": "ip2location/ip2location-laravel",
-    "description": "Determine geolocation information of web visitor's based on their IP address.",
-    "license": "LGPL",
+    "description": "Lookup for visitor's IP information, such as country, region, city, coordinates, zip code, time zone, ISP, domain name, connection type, area code, weather, MCC, MNC, mobile brand name, elevation and usage type.",
+    "license": "MIT",
     "keywords": [
         "laravel",
         "laravel 5",

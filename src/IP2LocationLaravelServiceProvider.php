@@ -3,6 +3,7 @@
 namespace Ip2location\IP2LocationLaravel;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\AliasLoader;
 
 class IP2LocationLaravelServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,9 @@ class IP2LocationLaravelServiceProvider extends ServiceProvider
      */
     public function register()
     {
+		//Dynamically add IP2LocationLaravel alias
+		AliasLoader::getInstance()->alias('IP2LocationLaravel', 'Ip2location\IP2LocationLaravel\Facade\IP2LocationLaravel');
+		
         $config = __DIR__.'/Config/ip2locationlaravel.php';
 
         $this->publishes([
