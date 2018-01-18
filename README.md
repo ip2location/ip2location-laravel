@@ -83,6 +83,10 @@ This library requires IP2Location BIN data file to function. You may download th
 * IP2Location LITE BIN Data (Free): http://lite.ip2location.com
 * IP2Location Commercial BIN Data (Comprehensive): http://www.ip2location.com
 
+## IPv4 BIN vs IPv6 BIN
+
+Use the IPv4 BIN file if you just need to query IPv4 addresses.
+Use the IPv6 BIN file if you need to query BOTH IPv4 and IPv6 addresses.
 
 ## SUPPORT
 
