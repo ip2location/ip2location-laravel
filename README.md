@@ -13,8 +13,8 @@ IP2Location Laravel extension enables the user to find the country, region, city
 3. Then publish the config file by:  
 `php artisan vendor:publish --provider=Ip2location\IP2LocationLaravel\IP2LocationLaravelServiceProvider --force`
 4. Download IP2Location BIN database
-    - IP2Location free LITE database at http://lite.ip2location.com
-    - IP2Location commercial database at http://www.ip2location.com
+    - IP2Location free LITE database at https://lite.ip2location.com
+    - IP2Location commercial database at https://www.ip2location.com
 5. Create a folder named as `ip2location` in the `database` directory.
 6. Unzip and copy the BIN file into `database/ip2location/` folder. 
 7. Rename the BIN file to IP2LOCATION.BIN.
@@ -80,8 +80,8 @@ Route::get('test', 'TestController@lookup');
 ## DEPENDENCIES (IP2LOCATION BIN DATA FILE)
 
 This library requires IP2Location BIN data file to function. You may download the BIN data file at
-* IP2Location LITE BIN Data (Free): http://lite.ip2location.com
-* IP2Location Commercial BIN Data (Comprehensive): http://www.ip2location.com
+* IP2Location LITE BIN Data (Free): https://lite.ip2location.com
+* IP2Location Commercial BIN Data (Comprehensive): https://www.ip2location.com
 
 ## IPv4 BIN vs IPv6 BIN
 
@@ -92,4 +92,4 @@ Use the IPv6 BIN file if you need to query BOTH IPv4 and IPv6 addresses.
 
 Email: support@ip2location.com
 
-Website: http://www.ip2location.com
+Website: https://www.ip2location.com
