@@ -44,7 +44,7 @@ class TestController extends Controller
     public function lookup(){
         
 		//Try query the geolocation information of 8.8.8.8 IP address
-		$records = IP2LocationLaravel::get('8.8.8.8', 'bin');
+		$records = IP2LocationLaravel::get('8.8.8.8', \Ip2location\IP2LocationLaravel\IP2LocationLaravel::QUERY_BIN);
 
 		echo 'IP Number             : ' . $records['ipNumber'] . "<br>";
 		echo 'IP Version            : ' . $records['ipVersion'] . "<br>";
@@ -114,7 +114,7 @@ class TestController extends Controller
     public function lookup(){
         
 		//Try query the geolocation information of 8.8.8.8 IP address
-		$records = IP2LocationLaravel::get('8.8.8.8', 'ws');
+		$records = IP2LocationLaravel::get('8.8.8.8', \Ip2location\IP2LocationLaravel\IP2LocationLaravel::QUERY_WS);
 
 		echo '<pre>';
         print_r($records);
