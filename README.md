@@ -12,36 +12,24 @@ IP2Location Laravel extension enables the user to find the country, region, city
 `Ip2location\IP2LocationLaravel\IP2LocationLaravelServiceProvider::class,`
 3. Then publish the config file by:  
 `php artisan vendor:publish --provider=Ip2location\IP2LocationLaravel\IP2LocationLaravelServiceProvider --force`
-4. Download IP2Location BIN database
-    - IP2Location free LITE database at https://lite.ip2location.com
-    - IP2Location commercial database at https://www.ip2location.com
-5. To use IP2Location databases, create a folder named as `ip2location` in the `database` directory.
-6. Unzip and copy the BIN file into `database/ip2location/` folder. 
-7. Rename the BIN file to IP2LOCATION.BIN.
-8. To use IP2Location web service, create a new file called "site_vars.php" in `config` directory.
-9. In the site_vars.php, save the following contents:
-```php
-<?php
-return [
-    'IP2LocationAPIKey' => 'your_api_key', // Required. Your IP2Location API key.
-    'IP2LocationPackage' => 'WS1', // Required. Choose the package you would like to use.
-    'IP2LocationUsessl' => false, // Optional. Use https or http.
-    'IP2LocationAddons' => [], // Optional. Refer to https://www.ip2location.com/web-service/ip2location for the list of available addons.
-    'IP2LocationLanguage' => 'en', // Optional. Refer to https://www.ip2location.com/web-service/ip2location for available languages.
-];
-```
-
-
 ## USAGE
 
-In this tutorial, we will show you on how to create a **TestController** to display the IP information.
+IP2Location Laravel extension is able to query the IP address information from either BIN database or web service. This section will explain how to use this extension to query from BIN database and web service.
 
-1. Create a **TestController** in Laravel using the below command line
+### BIN DATABASE
+
+1. Download IP2Location BIN database
+    - IP2Location free LITE database at https://lite.ip2location.com
+    - IP2Location commercial database at https://www.ip2location.com
+2. To use IP2Location databases, create a folder named as `ip2location` in the `database` directory.
+3. Unzip and copy the BIN file into `database/ip2location/` folder. 
+4. Rename the BIN file to IP2LOCATION.BIN.
+5. Create a **TestController** in Laravel using the below command line
 ```
 php artisan make:controller TestController
 ```
-2. Open the **app/Http/Controllers/TestController.php** in any text editor.
-3. To use IP2Location databases, add the below lines into the controller file.
+6. Open the **app/Http/Controllers/TestController.php** in any text editor.
+7. To use IP2Location databases, add the below lines into the controller file.
 ```php
 <?php
 
@@ -84,7 +72,33 @@ class TestController extends Controller
 	}
 }
 ```
-4. To use IP2Location databases, add the below lines into the controller file.
+8. Add the following line into the *routes/web.php* file.
+```
+Route::get('test', 'TestController@lookup');
+```
+9. Enter the URL <your domain>/public/test and run. You should see the information of **8.8.8.8** IP address.
+
+
+### WEB SERVICE
+
+1. To use IP2Location web service, create a new file called "site_vars.php" in `config` directory.
+2. In the site_vars.php, save the following contents:
+```php
+<?php
+return [
+    'IP2LocationAPIKey' => 'your_api_key', // Required. Your IP2Location API key.
+    'IP2LocationPackage' => 'WS1', // Required. Choose the package you would like to use.
+    'IP2LocationUsessl' => false, // Optional. Use https or http.
+    'IP2LocationAddons' => [], // Optional. Refer to https://www.ip2location.com/web-service/ip2location for the list of available addons.
+    'IP2LocationLanguage' => 'en', // Optional. Refer to https://www.ip2location.com/web-service/ip2location for available languages.
+];
+```
+3. Create a **TestController** in Laravel using the below command line
+```
+php artisan make:controller TestController
+```
+4. Open the **app/Http/Controllers/TestController.php** in any text editor.
+5. To use IP2Location databases, add the below lines into the controller file.
 ```php
 <?php
 
@@ -121,16 +135,16 @@ class TestController1 extends Controller
 		echo 'ZIP Code              : ' . $records['zip_code'] . "<br>";
 		echo 'Domain Name           : ' . $records['domain'] . "<br>";
 		echo 'ISP Name              : ' . $records['isp'] . "<br>";
-		echo 'Credits Consumed              : ' . $records['credits_consumed'] . "<br>";
+		echo 'Credits Consumed      : ' . $records['credits_consumed'] . "<br>";
 	}
 }
 
 ```
-5. Add the following line into the *routes/web.php* file.
+6. Add the following line into the *routes/web.php* file.
 ```
 Route::get('test', 'TestController@lookup');
 ```
-5. Enter the URL <your domain>/public/test and run. You should see the information of **8.8.8.8** IP address.
+7. Enter the URL <your domain>/public/test and run. You should see the information of **8.8.8.8** IP address.
 
 ## DEPENDENCIES
 
