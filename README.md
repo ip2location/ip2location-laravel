@@ -44,7 +44,7 @@ class TestController extends Controller
     public function lookup(){
         
 		//Try query the geolocation information of 8.8.8.8 IP address
-		$records = IP2LocationLaravel::get('8.8.8.8');
+		$records = IP2LocationLaravel::get('8.8.8.8', 'bin');
 
 		echo 'IP Number             : ' . $records['ipNumber'] . "<br>";
 		echo 'IP Version            : ' . $records['ipVersion'] . "<br>";
@@ -108,34 +108,17 @@ use Illuminate\Http\Request;
 
 use IP2LocationLaravel;			//use IP2LocationLaravel class
 
-class TestController1 extends Controller
+class TestController extends Controller
 {
     //Create a lookup function for display
-        public function lookup(){
+    public function lookup(){
+        
 		//Try query the geolocation information of 8.8.8.8 IP address
-		$records = IP2LocationLaravel::query('8.8.8.8', \Config::get('site_vars.IP2LocationAPIKey'), \Config::get('site_vars.IP2LocationPackage'), \Config::get('site_vars.IP2LocationUsessl'), \Config::get('site_vars.IP2LocationAddons'), \Config::get('site_vars.IP2LocationLanguage'));
+		$records = IP2LocationLaravel::get('8.8.8.8', 'ws');
 
-		echo 'Country Code          : ' . $records['country_code'] . "<br>";
-		echo 'Country Name          : ' . $records['country_name'] . "<br>";
-		echo 'Region Name           : ' . $records['region_name'] . "<br>";
-		echo 'City Name             : ' . $records['city_name'] . "<br>";
-		echo 'Latitude              : ' . $records['latitude'] . "<br>";
-		echo 'Longitude             : ' . $records['longitude'] . "<br>";
-		echo 'Area Code             : ' . $records['area_code'] . "<br>";
-		echo 'IDD Code              : ' . $records['idd_code'] . "<br>";
-		echo 'Weather Station Code  : ' . $records['weather_station_code'] . "<br>";
-		echo 'Weather Station Name  : ' . $records['weather_station_name'] . "<br>";
-		echo 'MCC                   : ' . $records['mcc'] . "<br>";
-		echo 'MNC                   : ' . $records['mnc'] . "<br>";
-		echo 'Mobile Carrier        : ' . $records['mobile_brand'] . "<br>";
-		echo 'Usage Type            : ' . $records['usage_type'] . "<br>";
-		echo 'Elevation             : ' . $records['elevation'] . "<br>";
-		echo 'Net Speed             : ' . $records['net_speed'] . "<br>";
-		echo 'Time Zone             : ' . $records['time_zone'] . "<br>";
-		echo 'ZIP Code              : ' . $records['zip_code'] . "<br>";
-		echo 'Domain Name           : ' . $records['domain'] . "<br>";
-		echo 'ISP Name              : ' . $records['isp'] . "<br>";
-		echo 'Credits Consumed      : ' . $records['credits_consumed'] . "<br>";
+		echo '<pre>';
+        print_r($records);
+        echo '</pre>';
 	}
 }
 
