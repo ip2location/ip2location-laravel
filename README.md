@@ -4,6 +4,8 @@
 
 IP2Location Laravel extension enables the user to find the country, region, city, coordinates, zip code, time zone, ISP, domain name, connection type, area code, weather, MCC, MNC, mobile brand name, elevation and usage type that any IP address or hostname originates from. It has been optimized for speed and memory utilization.
 
+*Note: This extension works in Laravel 6, Laravel 7 and Laravel 8.*
+
 
 ## INSTALLATION
 
@@ -41,10 +43,10 @@ use IP2LocationLaravel;			//use IP2LocationLaravel class
 class TestController extends Controller
 {
 	//Create a lookup function for display
-    public function lookup(){
-        
+	public function lookup(){
+
 		//Try query the geolocation information of 8.8.8.8 IP address
-		$records = IP2LocationLaravel::get('8.8.8.8', \Ip2location\IP2LocationLaravel\IP2LocationLaravel::QUERY_BIN);
+		$records = IP2LocationLaravel::get('8.8.8.8', 'bin');
 
 		echo 'IP Number             : ' . $records['ipNumber'] . "<br>";
 		echo 'IP Version            : ' . $records['ipVersion'] . "<br>";
@@ -110,15 +112,15 @@ use IP2LocationLaravel;			//use IP2LocationLaravel class
 
 class TestController extends Controller
 {
-    //Create a lookup function for display
-    public function lookup(){
-        
+	//Create a lookup function for display
+	public function lookup(){
+
 		//Try query the geolocation information of 8.8.8.8 IP address
-		$records = IP2LocationLaravel::get('8.8.8.8', \Ip2location\IP2LocationLaravel\IP2LocationLaravel::QUERY_WS);
+		$records = IP2LocationLaravel::get('8.8.8.8', 'ws');
 
 		echo '<pre>';
-        print_r($records);
-        echo '</pre>';
+		print_r($records);
+		echo '</pre>';
 	}
 }
 
