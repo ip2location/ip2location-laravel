@@ -2,7 +2,7 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/ip2location/ip2location-laravel.svg)](https://packagist.org/packages/ip2location/ip2location-laravel)
 [![Total Downloads](https://img.shields.io/packagist/dt/ip2location/ip2location-laravel.svg?style=flat-square)](https://packagist.org/packages/ip2location/ip2location-laravel)
 
-IP2Location Laravel extension enables the user to find the country, region, city, coordinates, zip code, time zone, ISP, domain name, connection type, area code, weather, MCC, MNC, mobile brand name, elevation and usage type that any IP address or hostname originates from. It has been optimized for speed and memory utilization.
+IP2Location Laravel extension enables the user to find the country, region, city, coordinates, zip code, time zone, ISP, domain name, connection type, area code, weather, MCC, MNC, mobile brand name, elevation, usage type, IP address type and IAB advertising category from IP address using IP2Location database. It has been optimized for speed and memory utilization.
 
 *Note: This extension works in Laravel 6, Laravel 7 and Laravel 8.*
 
@@ -71,6 +71,8 @@ class TestController extends Controller
 		echo 'ZIP Code              : ' . $records['zipCode'] . "<br>";
 		echo 'Domain Name           : ' . $records['domainName'] . "<br>";
 		echo 'ISP Name              : ' . $records['isp'] . "<br>";
+		echo 'Address Type          : ' . $records['addressType'] . "<br>";
+		echo 'Category              : ' . $records['category'] . "<br>";
 	}
 }
 ```
