@@ -4,8 +4,9 @@
     "license": "MIT",
     "keywords": [
         "laravel",
-        "laravel 5",
+        "laravel 6",
         "laravel 7",
+        "laravel 8",
         "IP2Location",
         "geolocation"
     ],
@@ -18,7 +19,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4",
-        "ip2location/ip2location-php": "8.*"
+        "ip2location/ip2location-php": "9.*"
     },
     "autoload": {
         "psr-4": {
