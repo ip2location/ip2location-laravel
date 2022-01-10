@@ -9,11 +9,8 @@ IP2Location Laravel extension enables the user to find the country, region, city
 
 ## INSTALLATION
 
-1. Run the command: `composer require ip2location/ip2location-laravel` to download the package into the Laravel platform.
-2. Edit `config/app.php` and add the below line in 'providers' section:  
-`Ip2location\IP2LocationLaravel\IP2LocationLaravelServiceProvider::class,`
-3. Then publish the config file by:  
-`php artisan vendor:publish --provider='Ip2location\IP2LocationLaravel\IP2LocationLaravelServiceProvider' --force`
+Run the command: `composer require ip2location/ip2location-laravel` to download the package into the Laravel platform.
+
 ## USAGE
 
 IP2Location Laravel extension is able to query the IP address information from either BIN database or web service. This section will explain how to use this extension to query from BIN database and web service.
