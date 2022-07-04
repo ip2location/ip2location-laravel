@@ -172,7 +172,7 @@ class TestController extends Controller
 ```
 Route::get('test', 'TestController@lookup');
 ```
-5. Enter the URL <your domain>/public/test and run. You should see the information of **8.8.8.8** IP address.
+5. Enter the URL <your domain>/public/test and run.
 
 ## DEPENDENCIES
 
