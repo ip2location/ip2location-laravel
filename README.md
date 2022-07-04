@@ -130,7 +130,7 @@ Route::get('test', 'TestController@lookup');
 ```
 7. Enter the URL <your domain>/public/test and run. You should see the information of **8.8.8.8** IP address.
 
-### IPTools
+### IPTOOLS
 
 1. Create a **TestController** in Laravel using the below command line
 ```
