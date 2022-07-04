@@ -20,7 +20,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4",
-        "ip2location/ip2location-php": "9.*"
+        "ip2location/ip2location-php": ">=9.4"
     },
     "autoload": {
         "psr-4": {

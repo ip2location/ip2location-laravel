@@ -38,4 +38,76 @@ class IP2LocationLaravel
         
         return $records;
     }
+
+    public function isIpv4($ip)
+    {
+        $ipTools = new \IP2Location\IpTools();
+        return $ipTools->isIpv4($ip);
+    }
+
+    public function isIpv6($ip)
+    {
+        $ipTools = new \IP2Location\IpTools();
+        return $ipTools->isIpv6($ip);
+    }
+
+    public function ipv4ToDecimal($ip)
+    {
+        $ipTools = new \IP2Location\IpTools();
+        return $ipTools->ipv4ToDecimal($ip);
+    }
+
+    public function ipv6ToDecimal($ip)
+    {
+        $ipTools = new \IP2Location\IpTools();
+        return $ipTools->ipv6ToDecimal($ip);
+    }
+
+    public function decimalToIpv4($num)
+    {
+        $ipTools = new \IP2Location\IpTools();
+        return $ipTools->decimalToIpv4($num);
+    }
+
+    public function decimalToIpv6($num)
+    {
+        $ipTools = new \IP2Location\IpTools();
+        return $ipTools->decimalToIpv6($num);
+    }
+
+    public function ipv4ToCidr($ipFrom, $ipTo)
+    {
+        $ipTools = new \IP2Location\IpTools();
+        return $ipTools->ipv4ToCidr($ipFrom, $ipTo);
+    }
+
+    public function cidrToIpv4($cidr)
+    {
+        $ipTools = new \IP2Location\IpTools();
+        return $ipTools->cidrToIpv4($cidr);
+    }
+
+    public function ipv6ToCidr($ipFrom, $ipTo)
+    {
+        $ipTools = new \IP2Location\IpTools();
+        return $ipTools->ipv6ToCidr($ipFrom, $ipTo);
+    }
+
+    public function cidrToIpv6($cidr)
+    {
+        $ipTools = new \IP2Location\IpTools();
+        return $ipTools->cidrToIpv6($cidr);
+    }
+
+    public function compressIpv6($ipv6)
+    {
+        $ipTools = new \IP2Location\IpTools();
+        return $ipTools->compressIpv6($ipv6);
+    }
+
+    public function expandIpv6($ipv6)
+    {
+        $ipTools = new \IP2Location\IpTools();
+        return $ipTools->expandIpv6($ipv6);
+    }
 }

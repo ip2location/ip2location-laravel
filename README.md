@@ -130,6 +130,50 @@ Route::get('test', 'TestController@lookup');
 ```
 7. Enter the URL <your domain>/public/test and run. You should see the information of **8.8.8.8** IP address.
 
+### IPTools
+
+1. Create a **TestController** in Laravel using the below command line
+```
+php artisan make:controller TestController
+```
+2. Open the **app/Http/Controllers/TestController.php** in any text editor.
+3. To use IP2Location IPTools class, add the below lines into the controller file.
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use IP2LocationLaravel;			//use IP2LocationLaravel class
+
+class TestController extends Controller
+{
+	//Create a lookup function for display
+	public function lookup(){
+
+		var_dump(IP2LocationLaravel::isIpv4('8.8.8.8'));echo '<br>';
+		var_dump(IP2LocationLaravel::isIpv6('2001:4860:4860::8888'));echo '<br>';
+		print_r(IP2LocationLaravel::ipv4ToDecimal('8.8.8.8'));echo '<br>';
+		print_r(IP2LocationLaravel::decimalToIpv4(134744072));echo '<br>';
+		print_r(IP2LocationLaravel::ipv6ToDecimal('2001:4860:4860::8888'));echo '<br>';
+		print_r(IP2LocationLaravel::decimalToIpv6('42541956123769884636017138956568135816'));echo '<br>';
+		print_r(IP2LocationLaravel::ipv4ToCidr('8.0.0.0', '8.255.255.255'));echo '<br>';
+		print_r(IP2LocationLaravel::cidrToIpv4('8.0.0.0/8'));echo '<br>';
+		print_r(IP2LocationLaravel::ipv6ToCidr('2002:0000:0000:1234:abcd:ffff:c0a8:0000', '2002:0000:0000:1234:ffff:ffff:ffff:ffff'));echo '<br>';
+		print_r(IP2LocationLaravel::cidrToIpv6('2002::1234:abcd:ffff:c0a8:101/64'));echo '<br>';
+		print_r(IP2LocationLaravel::compressIpv6('2002:0000:0000:1234:FFFF:FFFF:FFFF:FFFF'));echo '<br>';
+		print_r(IP2LocationLaravel::expandIpv6('2002::1234:FFFF:FFFF:FFFF:FFFF'));echo '<br>';
+	}
+}
+
+```
+4. Add the following line into the *routes/web.php* file.
+```
+Route::get('test', 'TestController@lookup');
+```
+5. Enter the URL <your domain>/public/test and run. You should see the information of **8.8.8.8** IP address.
+
 ## DEPENDENCIES
 
 This library requires either IP2Location BIN data file or IP2Location API key to function. You may download the BIN data file at
