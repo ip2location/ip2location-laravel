@@ -82,8 +82,16 @@ Route::get('test', 'TestController@lookup');
 
 ### WEB SERVICE
 
-1. To use IP2Location web service, create a new file called "site_vars.php" in `config` directory.
-2. In the site_vars.php, save the following contents:
+1. To use IP2Location.io or IP2Location web service, create a new file called "site_vars.php" in `config` directory.
+2. In the site_vars.php, save the following contents for IP2Location.io:
+```
+<?php
+return [
+    'IP2LocationioAPIKey' => 'your_api_key', // Required. Your IP2Location.io API key.
+    'IP2LocationioLanguage' => 'en', // Optional. Refer to https://www.ip2location.io/ip2location-documentation for available languages.
+];
+```
+Or save the following contents for IP2Location:
 ```php
 <?php
 return [
