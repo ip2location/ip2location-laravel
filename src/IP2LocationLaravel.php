@@ -4,6 +4,9 @@ namespace Ip2location\IP2LocationLaravel;
 
 class IP2LocationLaravel
 {
+    private $db;
+    private $ws;
+    
     private function load($mode)
     {
         if ($mode == 'bin')
