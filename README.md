@@ -2,9 +2,9 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/ip2location/ip2location-laravel.svg)](https://packagist.org/packages/ip2location/ip2location-laravel)
 [![Total Downloads](https://img.shields.io/packagist/dt/ip2location/ip2location-laravel.svg?style=flat-square)](https://packagist.org/packages/ip2location/ip2location-laravel)
 
-IP2Location Laravel extension enables the user to find the country, region, city, coordinates, zip code, time zone, ISP, domain name, connection type, area code, weather, MCC, MNC, mobile brand name, elevation, usage type, IP address type and IAB advertising category from IP address using IP2Location database. It has been optimized for speed and memory utilization.
+IP2Location Laravel extension enables the user to find the country, region, district, city, coordinates, zip code, time zone, ISP, domain name, connection type, area code, weather, MCC, MNC, mobile brand name, elevation, usage type, IP address type, IAB advertising category and ASN from IP address using IP2Location database. It has been optimized for speed and memory utilization.
 
-*Note: This extension works in Laravel 6, Laravel 7, Laravel 8 and Laravel 9.*
+*Note: This extension works in Laravel 6, Laravel 7, Laravel 8, Laravel 9, Laravel 10 and Laravel 11.*
 
 
 ## INSTALLATION
@@ -70,14 +70,17 @@ class TestController extends Controller
 		echo 'ISP Name              : ' . $records['isp'] . "<br>";
 		echo 'Address Type          : ' . $records['addressType'] . "<br>";
 		echo 'Category              : ' . $records['category'] . "<br>";
+		echo 'District              : ' . $records['district'] . "<br>";
+		echo 'ASN                   : ' . $records['asn'] . "<br>";
+		echo 'AS                    : ' . $records['as'] . "<br>";
 	}
 }
 ```
 8. Add the following line into the *routes/web.php* file.
 ```
-Route::get('test', 'TestController@lookup');
+Route::get('test', 'App\Http\Controllers\TestController@lookup');
 ```
-9. Enter the URL <your domain>/public/test and run. You should see the information of **8.8.8.8** IP address.
+9. Enter the URL <your domain>/test and run. You should see the information of **8.8.8.8** IP address.
 
 
 ### WEB SERVICE
@@ -134,9 +137,9 @@ class TestController extends Controller
 ```
 6. Add the following line into the *routes/web.php* file.
 ```
-Route::get('test', 'TestController@lookup');
+Route::get('test', 'App\Http\Controllers\TestController@lookup');
 ```
-7. Enter the URL <your domain>/public/test and run. You should see the information of **8.8.8.8** IP address.
+7. Enter the URL <your domain>/test and run. You should see the information of **8.8.8.8** IP address.
 
 ### IPTOOLS
 
@@ -178,9 +181,9 @@ class TestController extends Controller
 ```
 4. Add the following line into the *routes/web.php* file.
 ```
-Route::get('test', 'TestController@lookup');
+Route::get('test', 'App\Http\Controllers\TestController@lookup');
 ```
-5. Enter the URL <your domain>/public/test and run.
+5. Enter the URL <your domain>/test and run.
 
 ## DEPENDENCIES
 
