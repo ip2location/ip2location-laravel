@@ -4,7 +4,7 @@
 
 IP2Location Laravel extension enables the user to find the country, region, district, city, coordinates, zip code, time zone, ISP, domain name, connection type, area code, weather, MCC, MNC, mobile brand name, elevation, usage type, IP address type, IAB advertising category and ASN from IP address using IP2Location database. It has been optimized for speed and memory utilization.
 
-*Note: This extension works in Laravel 6, Laravel 7, Laravel 8, Laravel 9, Laravel 10 and Laravel 11.*
+*Note: This extension works in Laravel 6, Laravel 7, Laravel 8, Laravel 9, Laravel 10, Laravel 11 and Laravel 12.*
 
 
 ## INSTALLATION
