@@ -4,7 +4,7 @@
 
 IP2Location Laravel extension enables the user to find the country, region, district, city, coordinates, zip code, time zone, ISP, domain name, connection type, area code, weather, MCC, MNC, mobile brand name, elevation, usage type, IP address type, IAB advertising category and ASN from IP address using IP2Location database. It has been optimized for speed and memory utilization.
 
-*Note: This extension works in Laravel 6, Laravel 7, Laravel 8, Laravel 9, Laravel 10, Laravel 11 and Laravel 12.*
+*Note: This extension works in Laravel 6, Laravel 7, Laravel 8, Laravel 9, Laravel 10, Laravel 11, Laravel 12 and Laravel 13.*
 
 
 ## INSTALLATION
@@ -73,6 +73,9 @@ class TestController extends Controller
 		echo 'District              : ' . $records['district'] . "<br>";
 		echo 'ASN                   : ' . $records['asn'] . "<br>";
 		echo 'AS                    : ' . $records['as'] . "<br>";
+		echo 'AS Domain             : ' . $records['asDomain'] . "<br>";
+		echo 'AS Usage Type         : ' . $records['asUsageType'] . "<br>";
+		echo 'AS CIDR               : ' . $records['asCidr'] . "<br>";
 	}
 }
 ```
@@ -191,7 +194,7 @@ This library requires either IP2Location BIN data file or IP2Location API key to
 * IP2Location LITE BIN Data (Free): https://lite.ip2location.com
 * IP2Location Commercial BIN Data (Comprehensive): https://www.ip2location.com
 
-For IP2Location API key, you can sign up [IP2Location Web Service](https://www.ip2location.com/web-service/ip2location) to get one free API key.
+You can also sign up for [IP2Location.io IP Geolocation API](https://www.ip2location.io/sign-up) to get one free API key.
 
 ## IPv4 BIN vs IPv6 BIN
 
