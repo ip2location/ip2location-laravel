@@ -45,21 +45,19 @@ class TestController extends Controller
 		//Try query the geolocation information of 8.8.8.8 IP address
 		$records = IP2LocationLaravel::get('8.8.8.8', 'bin');
 
-		echo 'IP Number             : ' . $records['ipNumber'] . "<br>";
-		echo 'IP Version            : ' . $records['ipVersion'] . "<br>";
-		echo 'IP Address            : ' . $records['ipAddress'] . "<br>";
-		echo 'Country Code          : ' . $records['countryCode'] . "<br>";
-		echo 'Country Name          : ' . $records['countryName'] . "<br>";
-		echo 'Region Name           : ' . $records['regionName'] . "<br>";
-		echo 'City Name             : ' . $records['cityName'] . "<br>";
+		echo 'DateTime             : ' . $records['daterealtime'] . "<br>";
+		echo 'Msisdn            : ' . $records['msisdndate'] . "<br>";
+		echo 'Device Version            : ' . $records['devicedate'] . "<br>";
+		echo 'Imei Number          : ' . $records['imeidate'] . "<br>";
+		echo 'Imsi Number          : ' . $records['imsidate'] . "<br>";
+		echo 'MCC           : ' . $records['mccdate'] . "<br>";
+		echo 'MNC             : ' . $records['mncdate'] . "<br>";
 		echo 'Latitude              : ' . $records['latitude'] . "<br>";
 		echo 'Longitude             : ' . $records['longitude'] . "<br>";
-		echo 'Area Code             : ' . $records['areaCode'] . "<br>";
-		echo 'IDD Code              : ' . $records['iddCode'] . "<br>";
+		echo 'LAC/TAG            : ' . $records['lacdate'] . "<br>";
+		echo 'CID/CI             : ' . $records['ciddate'] . "<br>";
 		echo 'Weather Station Code  : ' . $records['weatherStationCode'] . "<br>";
 		echo 'Weather Station Name  : ' . $records['weatherStationName'] . "<br>";
-		echo 'MCC                   : ' . $records['mcc'] . "<br>";
-		echo 'MNC                   : ' . $records['mnc'] . "<br>";
 		echo 'Mobile Carrier        : ' . $records['mobileCarrierName'] . "<br>";
 		echo 'Usage Type            : ' . $records['usageType'] . "<br>";
 		echo 'Elevation             : ' . $records['elevation'] . "<br>";
